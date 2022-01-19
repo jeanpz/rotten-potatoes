@@ -10,4 +10,4 @@
 
 5- Criar o seu cluster > Executar o comando "k3d cluster create mycluster --agents 3 --servers 3 -p "8080:30000@loadbalancer" "
 
-6- Aplicar o arquivo de deployment > Executar o comando "kubectl apply -f deployment.yaml"
+6- Subir para a pasta rotten-potatoes e aplicar o arquivo de deployment > Executar o comando "kubectl apply -f deployment.yaml"
