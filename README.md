@@ -1,4 +1,4 @@
-#Passos para criar o container da aplicação e subilo no cluster k8s
+#Passos para criar o container da aplicação e subir no cluster k8s
 
 1- clonar o repositorio para a sua maquina local (git clone)
 
