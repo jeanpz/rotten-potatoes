@@ -46,6 +46,7 @@ kind: Deployment
 metadata:
   name: web
 spec:
+  replicas: 6
   selector:
     matchLabels:
       app: web
