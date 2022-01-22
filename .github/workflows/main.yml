@@ -8,11 +8,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  CI:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: Docker Login
@@ -27,7 +26,7 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags: 
+          tags: |
             jpzanini/rotten-potatoes:latest
             jpzanini/rotten-potatoes:${{ github.run_number }}
           
