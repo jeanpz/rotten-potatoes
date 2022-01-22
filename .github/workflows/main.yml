@@ -30,3 +30,14 @@ jobs:
             jpzanini/rotten-potatoes:latest
             jpzanini/rotten-potatoes:${{ github.run_number }}
           
+  CD:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Kubernetes Set Context
+        uses: Azure/k8s-set-context@v2
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
