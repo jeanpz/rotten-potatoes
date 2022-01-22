@@ -31,6 +31,7 @@ jobs:
             jpzanini/rotten-potatoes:${{ github.run_number }}
           
   CD:
+    needs: [CI]
     runs-on: ubuntu-latest
     
     steps:
@@ -41,3 +42,9 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.K8S_KUBECONFIG }}
+      - name: Deploy to Kubernetes cluster
+        uses: Azure/k8s-deploy@v1.5
+        with:
+          image: jpzanini/rotten-potatoes:${{ github.run_number }}
+          manifests: |
+            k8s/deployment.yaml
