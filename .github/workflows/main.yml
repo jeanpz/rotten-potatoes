@@ -29,5 +29,5 @@ jobs:
           push: true
           tags: 
             jpzanini/rotten-potatoes:latest
-            jpzanini/rotten-potatoes:v${{ github.run_number }}
+            jpzanini/rotten-potatoes:${{ github.run_number }}
           
